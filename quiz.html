@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and External Resources -->
+    <meta charset="UTF-8"> <!-- Defines character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness on all devices -->
+    
+    <title>Ultimate Movie Quiz - CineExplorer</title> <!-- Page Title -->
+    
+    <!-- Linking External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Importing Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Importing FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header>
+        <nav>
+          <ul>
+            <!-- Navigation Links -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="quiz.html" class="active">Movie Quiz</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Dark/Light Theme Toggle -->
+        <div class="theme-toggle">
+          <input type="checkbox" id="theme-switch"> <!-- Checkbox to switch themes -->
+          <label for="theme-switch" class="switch-label">
+            <i class="fas fa-sun"></i> <!-- Light mode icon -->
+            <i class="fas fa-moon"></i> <!-- Dark mode icon -->
+          </label>
+        </div>
+    </header>
+    
+    <!-- Quiz Introduction Section -->
+    <main class="quiz-container">
+        <div class="quiz-banner">
+            <h1>Ultimate Movie Quiz</h1> <!-- Quiz Title -->
+            <p>Test your movie knowledge with our ultimate quiz!</p>
+            <button id="start-quiz-button" class="cta-button">Get Started</button> <!-- Start Quiz Button -->
+        </div>
+
+        <!-- Quiz Setup Section -->
+        <div id="quiz-setup" class="quiz-section hidden">
+            <h2>Choose Your Quiz</h2>
+            <div id="movie-selection">
+                <h3>Select a Quiz Topic:</h3>
+                <select id="movie-dropdown">
+                    <option value="">Select a topic...</option>
+                </select>
+            </div>
+            <div id="difficulty-selection">
+                <h3>Select Difficulty:</h3>
+                <div class="difficulty-buttons">
+                    <button data-difficulty="easy">Easy</button>
+                    <button data-difficulty="medium">Medium</button>
+                    <button data-difficulty="hard">Hard</button>
+                </div>
+            </div>
+            <button id="start-quiz" disabled>Start Quiz</button> <!-- Disabled until a selection is made -->
+        </div>
+
+        <!-- Quiz Questions Section -->
+        <div id="quiz-questions" class="quiz-section hidden">
+            <div id="quiz-header">
+                <h2 id="movie-title"></h2>
+                <div id="quiz-progress">
+                    <div id="progress-bar"></div> <!-- Progress Bar for Quiz -->
+                </div>
+                <div id="quiz-stats">
+                    <span id="current-question"></span> <!-- Current Question Indicator -->
+                    <span id="timer"></span> <!-- Timer for Quiz -->
+                    <span id="score"></span> <!-- User's Score -->
+                </div>
+            </div>
+            <div id="question"></div> <!-- Question Display -->
+            <div id="choices"></div> <!-- Answer Choices -->
+            <button id="submit-answer" disabled>Submit Answer</button> <!-- Submit Button Disabled Initially -->
+        </div>
+
+        <!-- Quiz Result Section -->
+        <div id="quiz-result" class="quiz-section hidden">
+            <h2>Quiz Completed!</h2>
+            <div id="final-score"></div> <!-- Final Score Display -->
+            <div id="achievements"></div> <!-- Achievements Earned -->
+            <button id="restart-quiz">Take Another Quiz</button> <!-- Restart Quiz Button -->
+        </div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 CineExplorer. All rights reserved.</p> <!-- Copyright Notice -->
+    </footer>
+    
+    <!-- Linking External JavaScript File for Quiz Functionality -->
+    <script src="quiz.js"></script>
+</body>
+</html>

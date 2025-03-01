@@ -1,0 +1,153 @@
+<!DOCTYPE html> <!-- Specifies the document type as HTML5 -->
+<html lang="en"> <!-- Defines the language of the document as English -->
+<head>
+    <meta charset="UTF-8"> <!-- Sets the character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsive design on different screen sizes -->
+    <title>Profile - CineExplorer</title> <!-- Sets the title of the webpage -->
+    <link rel="stylesheet" href="styles.css"> <!-- Links to the external CSS file for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Links to Google Fonts for custom font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Links to FontAwesome for icons -->
+</head>
+<body>
+    <header>
+        <nav>
+          <ul> <!-- Creates an unordered list for navigation -->
+            <li><a href="index.html">Home</a></li> <!-- Link to Home page -->
+            <li><a href="search.html">Search</a></li> <!-- Link to Search page -->
+            <li><a href="favorites.html">Favorites</a></li> <!-- Link to Favorites page -->
+            <li><a href="quiz.html">Movie Quiz</a></li> <!-- Link to Movie Quiz page -->
+            <li><a href="profile.html" class="active">Profile</a></li> <!-- Link to Profile page with active class -->
+          </ul>
+        </nav>
+        <div class="theme-toggle"> <!-- A section to toggle the theme -->
+          <input type="checkbox" id="theme-switch"> <!-- Checkbox input for theme switch -->
+          <label for="theme-switch" class="switch-label"> <!-- Label for the theme switch with icons -->
+            <i class="fas fa-sun"></i> <!-- Sun icon for light theme -->
+            <i class="fas fa-moon"></i> <!-- Moon icon for dark theme -->
+          </label>
+        </div>
+      </header>
+
+    <main class="profile-container"> <!-- Main container for the profile section -->
+        <div id="sign-in-form" class="auth-form"> <!-- Sign-in form container -->
+            <h2><i class="fas fa-user-circle"></i> Sign In</h2> <!-- Heading for Sign In with an icon -->
+            <form id="signin-form"> <!-- Form element for sign-in -->
+                <div class="form-group"> <!-- Container for the email input field -->
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label> <!-- Label for email input -->
+                    <input type="email" id="email" name="email" required> <!-- Email input field with required attribute -->
+                </div>
+                <div id="pass" class="form-group"> <!-- Container for the password input field -->
+                    <label for="password"><i class="fas fa-lock"></i> Password</label> <!-- Label for password input -->
+                    <input type="password" id="password" name="password" required> <!-- Password input field with required attribute -->
+                </div>
+                <button id="sign" type="submit" class="btn-primary"><i class="fas fa-sign-in-alt"></i> Sign In</button> <!-- Submit button for sign-in -->
+            </form>
+            <p>Don't have an account? <a href="#" id="show-signup" class="link-highlight">Sign Up</a></p> <!-- Link to the Sign-Up page -->
+        </div>
+
+        <div id="sign-up-form" class="auth-form hidden"> <!-- Sign-up form container (hidden by default) -->
+            <h2><i class="fas fa-user-plus"></i> Create Account</h2> <!-- Heading for Create Account with an icon -->
+            <form id="signup-form"> <!-- Form element for sign-up -->
+                <div class="form-group"> <!-- Container for the first name input field -->
+                    <label for="firstname"><i class="fas fa-user"></i> First Name</label> <!-- Label for first name input -->
+                    <input type="text" id="firstname" name="firstname" required> <!-- First name input field with required attribute -->
+                </div>
+                <div class="form-group"> <!-- Container for the surname input field -->
+                    <label for="surname"><i class="fas fa-user"></i> Surname</label> <!-- Label for surname input -->
+                    <input type="text" id="surname" name="surname" required> <!-- Surname input field with required attribute -->
+                </div>
+                <div class="form-group"> <!-- Container for the email input field -->
+                    <label for="signup-email"><i class="fas fa-envelope"></i> Email</label> <!-- Label for email input -->
+                    <input type="email" id="signup-email" name="email" required> <!-- Email input field with required attribute -->
+                </div>
+                <div class="form-group"> <!-- Container for the password input field -->
+                    <label for="signup-password"><i class="fas fa-lock"></i> Password</label> <!-- Label for password input -->
+                    <input type="password" id="signup-password" name="password" required> <!-- Password input field with required attribute -->
+                </div>
+                <div class="form-group"> <!-- Container for the favorite genre input field -->
+                    <label for="favorite-genre"><i class="fas fa-film"></i> Favorite Genre</label> <!-- Label for favorite genre selection -->
+                    <select id="favorite-genre" name="favorite-genre" required> <!-- Dropdown for selecting favorite genre -->
+                        <option value="">Select a genre</option> <!-- Default option -->
+                        <option value="action">Action</option> <!-- Action genre option -->
+                        <option value="comedy">Comedy</option> <!-- Comedy genre option -->
+                        <option value="drama">Drama</option> <!-- Drama genre option -->
+                        <option value="sci-fi">Sci-Fi</option> <!-- Sci-Fi genre option -->
+                        <option value="horror">Horror</option> <!-- Horror genre option -->
+                        <option value="romance">Romance</option> <!-- Romance genre option -->
+                        <option value="thriller">Thriller</option> <!-- Thriller genre option -->
+                        <option value="animation">Animation</option> <!-- Animation genre option -->
+                    </select>
+                </div>
+                <div class="form-group"> <!-- Container for the bio input field -->
+                    <label for="bio"><i class="fas fa-comment"></i> Bio</label> <!-- Label for bio input -->
+                    <textarea id="bio" name="bio" rows="3"></textarea> <!-- Bio input field -->
+                </div>
+                <button type="submit" class="btn-primary"><i class="fas fa-user-plus"></i> Create Account</button> <!-- Submit button to create account -->
+            </form>
+            <p>Already have an account? <a href="#" id="show-signin" class="link-highlight">Sign In</a></p> <!-- Link to sign-in form -->
+        </div>
+
+        <div id="profile-view" class="profile-view hidden"> <!-- Container for displaying the user's profile (hidden by default) -->
+            <div class="profile-header"> <!-- Container for the profile header -->
+                <div class="profile-avatar"> <!-- Avatar section of the profile -->
+                    <img src="profile.webp"> <!-- Profile picture -->
+                </div>
+                <h2 id="profile-name"></h2> <!-- Display the profile name -->
+            </div>
+            <div class="profile-info"> <!-- Container for the profile info -->
+                <p><i class="fas fa-envelope"></i> <span id="profile-email"></span></p> <!-- Display email -->
+                <p><i class="fas fa-film"></i> <span id="profile-genre"></span></p> <!-- Display favorite genre -->
+                <p><i class="fas fa-comment"></i> <span id="profile-bio"></span></p> <!-- Display bio -->
+            </div>
+            <div class="profile-actions"> <!-- Container for profile actions -->
+                <button id="edit-profile" class="btn-secondary"><i class="fas fa-edit"></i> Edit Profile</button> <!-- Button to edit profile -->
+                <button id="sign-out" class="btn-secondary"><i class="fas fa-sign-out-alt"></i> Sign Out</button> <!-- Button to sign out -->
+            </div>
+        </div>
+
+        <div id="edit-profile-form" class="auth-form hidden"> <!-- Edit profile form container (hidden by default) -->
+            <h2><i class="fas fa-user-edit"></i> Edit Profile</h2> <!-- Heading for Edit Profile with an icon -->
+            <form id="edit-form"> <!-- Form element for editing profile -->
+                <div class="form-group"> <!-- Container for the first name input field -->
+                    <label for="edit-firstname"><i class="fas fa-user"></i> First Name</label> <!-- Label for first name input -->
+                    <input type="text" id="edit-firstname" name="firstname" required> <!-- First name input field -->
+                </div>
+                <div class="form-group"> <!-- Container for the surname input field -->
+                    <label for="edit-surname"><i class="fas fa-user"></i> Surname</label> <!-- Label for surname input -->
+                    <input type="text" id="edit-surname" name="surname" required> <!-- Surname input field -->
+                </div>
+                <div class="form-group"> <!-- Container for the email input field -->
+                    <label for="edit-email"><i class="fas fa-envelope"></i> Email</label> <!-- Label for email input -->
+                    <input type="email" id="edit-email" name="email" required> <!-- Email input field -->
+                </div>
+                <div class="form-group"> <!-- Container for the genre input field -->
+                    <label for="edit-genre"><i class="fas fa-film"></i> Favorite Genre</label> <!-- Label for genre selection -->
+                    <select id="edit-genre" name="favorite-genre" required> <!-- Dropdown for editing genre -->
+                        <option value="">Select a genre</option> <!-- Default option -->
+                        <option value="action">Action</option> <!-- Action genre option -->
+                        <option value="comedy">Comedy</option> <!-- Comedy genre option -->
+                        <option value="drama">Drama</option> <!-- Drama genre option -->
+                        <option value="sci-fi">Sci-Fi</option> <!-- Sci-Fi genre option -->
+                        <option value="horror">Horror</option> <!-- Horror genre option -->
+                        <option value="romance">Romance</option> <!-- Romance genre option -->
+                        <option value="thriller">Thriller</option> <!-- Thriller genre option -->
+                        <option value="animation">Animation</option> <!-- Animation genre option -->
+                    </select>
+                </div>
+                <div class="form-group"> <!-- Container for the bio input field -->
+                    <label for="edit-bio"><i class="fas fa-comment"></i> Bio</label> <!-- Label for bio input -->
+                    <textarea id="edit-bio" name="bio" rows="3"></textarea> <!-- Bio input field -->
+                </div>
+                <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Changes</button> <!-- Submit button to save changes -->
+                <button type="button" id="cancel-edit" class="btn-secondary"><i class="fas fa-times"></i> Cancel</button> <!-- Cancel button for edit form -->
+            </form>
+        </div>
+    </main>
+
+    <footer> <!-- Footer section -->
+        <p>&copy; 2025 CineExplorer. All rights reserved.</p> <!-- Footer text with copyright information -->
+    </footer>
+
+    <script src="app.js"></script> <!-- Links to the external JavaScript file -->
+</body>
+</html>

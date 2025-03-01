@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and External Resources -->
+    <meta charset="UTF-8"> <!-- Defines character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness on all devices -->
+    
+    <title>Favorites - CineExplorer</title> <!-- Page Title -->
+    
+    <!-- Linking External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Importing Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Importing FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <header>
+        <nav>
+          <ul>
+            <!-- Navigation Links -->
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="favorites.html" class="active">Favorites</a></li>
+            <li><a href="quiz.html">Movie Quiz</a></li>
+            <li><a href="profile.html">Profile</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Dark/Light Theme Toggle -->
+        <div class="theme-toggle">
+          <input type="checkbox" id="theme-switch"> <!-- Checkbox to switch themes -->
+          <label for="theme-switch" class="switch-label">
+            <i class="fas fa-sun"></i> <!-- Light mode icon -->
+            <i class="fas fa-moon"></i> <!-- Dark mode icon -->
+          </label>
+        </div>
+    </header>
+    
+    <!-- Favorites Section -->
+    <main class="favorites-container">
+        <h1>My Favorites</h1> <!-- Favorites Page Title -->
+        
+        <!-- Filtering Options for Favorites -->
+        <div class="favorites-options">
+            <button id="fav-movies" class="filter-option">Movies</button>
+            <button id="fav-series" class="filter-option">Series</button>
+            <button id="fav-all" class="filter-option active">All</button>
+        </div>
+        
+        <!-- Sorting Options for Favorites -->
+        <div class="sort-container">
+            <button id="sort-button" class="sort-button">
+                Sort by: <span id="current-sort">Rating</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <ul id="sort-options" class="sort-options">
+                <li data-sort="rating">Rating</li>
+                <li data-sort="name">Name: A to Z</li>
+                <li data-sort="date">Date of Release</li>
+            </ul>
+        </div>
+        
+        <!-- Grid Container for Displaying Favorite Movies/Series -->
+        <div id="favorites-grid" class="results-grid"></div>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 CineExplorer. All rights reserved.</p> <!-- Copyright Notice -->
+    </footer>
+    
+    <!-- Linking External JavaScript File -->
+    <script src="app.js"></script>
+</body>
+</html>

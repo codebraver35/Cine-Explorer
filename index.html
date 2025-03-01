@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and External Resources -->
+    <meta charset="UTF-8"> <!-- Defines character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness on all devices -->
+    
+    <title>CineExplorer - Your Ultimate Movie & Series Guide</title> <!-- Page Title -->
+    
+    <!-- Linking External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Importing Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Importing FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body class="home-page"> <!-- Assigns class for styling purposes -->
+    
+    <section id="home-page">
+    
+    <!-- Background Overlay for Visual Effect -->
+    <div class="background-overlay"></div>
+    
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Navigation Links -->
+                <li><a href="index.html" class="active">Home</a></li> <!-- Highlights the current page -->
+                <li><a href="search.html">Search</a></li>
+                <li><a href="favorites.html">Favorites</a></li>
+                <li><a href="quiz.html">Movie Quiz</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Dark/Light Theme Toggle -->
+        <div class="theme-toggle">
+            <input type="checkbox" id="theme-switch"> <!-- Checkbox to switch themes -->
+            <label for="theme-switch" class="switch-label">
+                <i class="fas fa-sun"></i> <!-- Light mode icon -->
+                <i class="fas fa-moon"></i> <!-- Dark mode icon -->
+            </label>
+        </div>
+    </header>
+    
+    <!-- Main Content Section -->
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content welcome-div">
+                <h1 class="animated-title">Welcome to CineExplorer</h1> <!-- Main Heading -->
+                <p class="animated-subtitle">Discover, explore, and fall in love with the world of movies and series.</p>
+                <a href="search.html" class="cta-button">Get Started</a> <!-- Call-To-Action Button -->
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo"></div> <!-- Placeholder for Logo -->
+            <p>&copy; 2025 CineExplorer. All rights reserved.</p> <!-- Copyright Notice -->
+            
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Linking External JavaScript File -->
+    <script src="app.js"></script>
+    
+    </section>
+</body>
+</html>
+
+
